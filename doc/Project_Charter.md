@@ -7,13 +7,15 @@
 | **Users:** PCTO responsabile at ITI G.Marconi |
 | Stakeholders and Expectations: "" |
 | **Purpose (Problem or opportunity addressed by the project)**: "" |
-| **Goals and Objectives** : The overall goal is to give PCTO responsabile at ITI G.Marconi an apllication to do their work easily an alternative way to search the company for the students.  The app is expected to:
+| **Goals and Objectives** : The overall goal is to give PCTO responsabile at ITI G.Marconi an apllication to do their work easily, an alternative way to search the company for the students.
+| *The app is expected to:*|
 - .Provide a online interface were the PCTO responsabiles can access with their account information.
 - .Function in a simple and intuitive manner.
 - .Provide responsabiles to serch the more good company for the students.
 - .Provide responsabiles to add new company to the database
  |
 | **Schedule Information (Major milestones and deliverables)**:09/09/2010 - Gather requirements
+25/01/2020 - Finished initial analysis
 09/14/2010 - Project Charter Complete
 09/16/2010 - Scenarios of Use Complete
 09/21/2010 - Project Release Plan Complete
