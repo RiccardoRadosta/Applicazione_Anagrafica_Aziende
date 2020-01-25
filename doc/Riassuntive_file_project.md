@@ -10,6 +10,21 @@
 - A easily web application
 
 # Use case
-Generic Users  -> he mustn't do a login and he can only search the company
-PCTO responsabiles -> He have an account and he can send the precompilated email and other
-Main PCTO respondabile -> he have an account, can do all the thinghs that the PCTO responsabiles can do but can also add new PCTO respondabiles Users
+- Generic Users  -> he mustn't do a login and he can only search the company
+- PCTO responsabiles -> He have an account and he can send the precompilated email and other
+- Main PCTO respondabile -> he have an account, can do all the thinghs that the PCTO responsabiles can do but can also add new PCTO respondabiles Users
+
+# Project data
+- ID
+- Tipo azienda
+- Ragione sociale -> nome
+- Stato
+- Comune
+- Provincia
+- Cap
+- Telefono
+- Email
+- Sito web (opsionale)
+- N° dipendenti
+- Indirizzo
+- Codice ATECO
