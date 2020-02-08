@@ -6,14 +6,33 @@
     <link href="css/style.css" rel="stylesheet">
     <title>Pagina Iniziale</title>
   </head>
-  <header>
-    <h1 align = "center">Home</h1>
-  </header>
+  <?php
+  if (empty($_SESSION["user"])){
+    echo"<header style='background-color:#ff3333'>
+      <h1 align = 'center'>Home</h1>
+    </header>";
+  }
+  else{
+    echo"<header style='background-color:#85e085'>
+      <h1 align = 'center'>Home</h1>
+    </header>";
+  }
+  ?>
   <body>
     <?php
       if (empty($_SESSION["user"])){
-        echo "<h2>Per potere usufruire di tutte le funzioni della pagina, eseguire il LOGIN</h2>";
-        echo "<a href=\"login/login.html\"><h3>Clicca qui per fare il login</h3></a>";
+        echo"
+          <br><h1 align = 'center'>Non hai effettuato il login, se sei un professore, per poter usufruire di tutte le funzionalità esegui il Login</h1>
+          <h2 align = 'center'>Utilizzare credenziali classeviva</h2><br><br>
+          <form action='login/login.php' method='post'>
+            <table align='center'>
+            <tr><td>Scuola</td><td>Nome utente</td><td>Password</td><td></td></tr>
+            <tr><td><input type='text' name='scuola' ></td>
+            <td><input type='text' name='username' ></td>
+            <td><input type='password' name='password' ></td>
+            <td><input type='submit' name='invio'></td></tr>
+            </table>
+          </form>";
       }
       else {
         echo "<h3>Ciao, bentornato. Scegli quale pagina vuoi visitare</h3>";
