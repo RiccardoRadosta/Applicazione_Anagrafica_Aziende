@@ -35,13 +35,25 @@
           </form>";
       }
       else {
-        echo "<h3>Ciao, bentornato. Scegli quale pagina vuoi visitare</h3>";
-        echo "<a href=\"html_page/ora.php\"><h3>Orario</h3></a>";
-        echo "<a href=\"html_page/data.php\"><h3>Data</h3></a>";
-        echo "<a href=\"login/logout.php\"><h3>Clikkare qui per eseguire il logout</h3></a>";
+        echo "<h3>Buongiorno professor *****. </h3>";
+        #echo "<a href=\"html_page/ora.php\"><h3>Orario</h3></a>";
+        #echo "<a href=\"html_page/data.php\"><h3>Data</h3></a>";
+        #echo "<a href=\"login/logout.php\"><h3>Clikkare qui per eseguire il logout</h3></a>";
+        echo "<a href=\"login/logout.php\"><input name='button' value='Logout' style=' color: #191919; background-color: #e60000;' type='submit'></a>";
+
       }
       #elseif($_SESSION["user"] == "primi") {
       #}
      ?>
   </body>
+  <?php
+  if (empty($_SESSION["user"])){
+    echo"<footer style='background-color:#ff3333'>
+    </footer>";
+  }
+  else{
+    echo"<footer style='background-color:#85e085'>
+    </footer>";
+  }
+  ?>
 </html>

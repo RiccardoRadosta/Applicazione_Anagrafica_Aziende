@@ -10,8 +10,11 @@ if (isset($_POST["scuola"]) && isset($_POST["username"]) && isset($_POST["passwo
                       'login' =>$username,
                       'password' => $password));
     if(!empty($result[0])){
-        print("errore !!<br>");
-      print($result[1]);
+      header("Location: ../index.php");
+      #print("errore !!<br>");
+      #print($result[0]);
+      #print($result[1]);
+      #print($result[2]);
     }
     else{
       $info=$result[2];			//echo $result;
