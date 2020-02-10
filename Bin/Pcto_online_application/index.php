@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <link href="css/style.css" rel="stylesheet">
-    <title>Pagina Iniziale</title>
+    <title>Home</title>
   </head>
   <?php
   if (empty($_SESSION["user"])){
@@ -18,7 +18,7 @@
     </header>";
   }
   ?>
-  <body>
+  <body selettore>
     <?php
       if (empty($_SESSION["user"])){
         echo"
@@ -35,25 +35,23 @@
           </form>";
       }
       else {
-        echo "<h3>Buongiorno professor *****. </h3>";
+        echo "<h3>Buongiorno professore. </h3>";
         #echo "<a href=\"html_page/ora.php\"><h3>Orario</h3></a>";
         #echo "<a href=\"html_page/data.php\"><h3>Data</h3></a>";
         #echo "<a href=\"login/logout.php\"><h3>Clikkare qui per eseguire il logout</h3></a>";
         echo "<a href=\"login/logout.php\"><input name='button' value='Logout' style=' color: #191919; background-color: #e60000;' type='submit'></a>";
 
       }
-      #elseif($_SESSION["user"] == "primi") {
-      #}
      ?>
   </body>
   <?php
   if (empty($_SESSION["user"])){
     echo"<footer style='background-color:#ff3333'>
-    </footer>";
+    <h4>Created by Riccardo Radosta 5BI ITI Marconi </h4></footer>";
   }
   else{
     echo"<footer style='background-color:#85e085'>
-    </footer>";
+    <h4>Created by Riccardo Radosta 5BI ITI Marconi </h4></footer>";
   }
   ?>
 </html>
