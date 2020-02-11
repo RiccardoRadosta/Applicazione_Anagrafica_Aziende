@@ -1,25 +1,20 @@
 <?php session_start();
 include "db_connect.php";
-include "libs/util.php";
 #############################
 function create_table(){
-  $str=getOk($_REQUEST,"str");
-	if (strlen($str)>0){
+  $query = "SELECT Tipologia from Aziende";
+  $stmt = $con->prepare( $query );
+  $stmt->execute();
+  $num = $stmt->rowCount();
+  if ($num > 0){
+    echo("<tbody>"):
+    for ($i=0; $i < $num; $i++){
+      $riga = $stmt->fetch(PDO::FETCH_NUM);
+      foreach($riga as $key => $value){
 
-        $query = "SELECT Tipologia from Aziende";
-        try {
-            $num=0;
-            $stmt = $con->prepare( $query );	// $con arriva da include
-            $stmt->execute(array("%".$str."%"));
-            //Lettura numero righe risultato
-            $num = $stmt->rowCount();
-
-        } catch(PDOException $ex) {
-            echo "Errore !".$ex->getMessage();
-        }
-
-        //se num > 0 recordset vuoto o errore
-        if($num>0){
+      }
+    }
+  }
 
             echo "<table border='1'>";
                 echo "<tr>";
