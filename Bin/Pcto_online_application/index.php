@@ -1,4 +1,52 @@
-<?php session_start(); ?>
+<?php session_start();
+include "db_connect.php";
+include "libs/util.php";
+#############################
+function create_table(){
+  $str=getOk($_REQUEST,"str");
+	if (strlen($str)>0){
+
+        $query = "SELECT Tipologia from Aziende";
+        try {
+            $num=0;
+            $stmt = $con->prepare( $query );	// $con arriva da include
+            $stmt->execute(array("%".$str."%"));
+            //Lettura numero righe risultato
+            $num = $stmt->rowCount();
+
+        } catch(PDOException $ex) {
+            echo "Errore !".$ex->getMessage();
+        }
+
+        //se num > 0 recordset vuoto o errore
+        if($num>0){
+
+            echo "<table border='1'>";
+                echo "<tr>";
+                    echo "<th> N. </th>";
+                    echo "<th>id </th>";
+                    echo "<th>nome</th>";
+                echo "</tr>";
+
+                $np=1;
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                    echo "<tr>";
+                        echo "<td>".$np."</td>";
+                        $np++;
+
+                        echo "<td>".$row['ArtistId']."</td>";
+                        echo "<td>".$row['name']."</td>";
+
+                    echo "</tr>";
+                }
+            echo "</table>";
+        }
+        else{
+            echo "No records found.";
+        }
+    }
+  ###########################################
+}?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -37,7 +85,7 @@
       else {
         echo "<h3>Buongiorno professor *****. </h3>";
         echo "<a href=\"login/logout.php\"><input name='button' value='Logout' style=' color: #191919; background-color: #e60000;' type='submit'></a>";
-        $mysqli = new mysqli('remotemysql.com', 'Q1pyVGXE2Q', 'uv8sQq6Ofc', 'Q1pyVGXE2Q');
+        create_table();
       }
      ?>
   </body>
