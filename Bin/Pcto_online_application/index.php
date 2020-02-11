@@ -36,14 +36,9 @@
       }
       else {
         echo "<h3>Buongiorno professor *****. </h3>";
-        #echo "<a href=\"html_page/ora.php\"><h3>Orario</h3></a>";
-        #echo "<a href=\"html_page/data.php\"><h3>Data</h3></a>";
-        #echo "<a href=\"login/logout.php\"><h3>Clikkare qui per eseguire il logout</h3></a>";
         echo "<a href=\"login/logout.php\"><input name='button' value='Logout' style=' color: #191919; background-color: #e60000;' type='submit'></a>";
-
+        $mysqli = new mysqli('remotemysql.com', 'Q1pyVGXE2Q', 'uv8sQq6Ofc', 'Q1pyVGXE2Q');
       }
-      #elseif($_SESSION["user"] == "primi") {
-      #}
      ?>
   </body>
   <?php
