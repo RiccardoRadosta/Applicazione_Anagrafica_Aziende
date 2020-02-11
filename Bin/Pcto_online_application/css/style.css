@@ -32,6 +32,11 @@ td{
   text-align: center;
 }
 
+selettore {
+border-width: 50px;
+border-color: red;
+}
+
 /* Prelaoder */
 #preloader {
   position: fixed;
