@@ -7,41 +7,22 @@ function create_table(){
   $stmt->execute();
   $num = $stmt->rowCount();
   if ($num > 0){
-    echo("<tbody>"):
+    echo("<tbody>");
     for ($i=0; $i < $num; $i++){
       $riga = $stmt->fetch(PDO::FETCH_NUM);
+      echo "<tr>";
       foreach($riga as $key => $value){
-
+          echo "<td>$value</td>";
       }
+      echo "</tr>";
     }
+    echo "</tbody>";
   }
-
-            echo "<table border='1'>";
-                echo "<tr>";
-                    echo "<th> N. </th>";
-                    echo "<th>id </th>";
-                    echo "<th>nome</th>";
-                echo "</tr>";
-
-                $np=1;
-                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                    echo "<tr>";
-                        echo "<td>".$np."</td>";
-                        $np++;
-
-                        echo "<td>".$row['ArtistId']."</td>";
-                        echo "<td>".$row['name']."</td>";
-
-                    echo "</tr>";
-                }
-            echo "</table>";
-        }
-        else{
-            echo "No records found.";
-        }
-    }
-  ###########################################
-}?>
+  else{
+    echo "No data founded";
+  }
+}
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
