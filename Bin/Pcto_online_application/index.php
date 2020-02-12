@@ -1,22 +1,27 @@
 <?php session_start();
 include "db_connect.php";
-#############################
-function create_table(){
-  $query = "SELECT Tipologia from Aziende";
+function create_table($con){
+  $query = "SELECT * from Aziende";
   $stmt = $con->prepare( $query );
   $stmt->execute();
   $num = $stmt->rowCount();
   if ($num > 0){
-    echo("<tbody>");
+    echo("<table>");
     for ($i=0; $i < $num; $i++){
       $riga = $stmt->fetch(PDO::FETCH_NUM);
       echo "<tr>";
       foreach($riga as $key => $value){
+          if ($key > 4){
+            echo "</tr>";
+          }
           echo "<td>$value</td>";
+          if ($key > 4){
+            echo "</tr>";
+          }
       }
       echo "</tr>";
     }
-    echo "</tbody>";
+    echo "</table>";
   }
   else{
     echo "No data founded";
@@ -61,7 +66,7 @@ function create_table(){
       else {
         echo "<h3>Buongiorno professor *****. </h3>";
         echo "<a href=\"login/logout.php\"><input name='button' value='Logout' style=' color: #191919; background-color: #e60000;' type='submit'></a>";
-        create_table();
+        create_table($con);
       }
      ?>
   </body>
