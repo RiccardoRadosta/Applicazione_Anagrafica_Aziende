@@ -1,32 +1,4 @@
 <?php session_start();
-include "db_connect.php";
-function create_table($con){
-  $query = "SELECT * from Aziende";
-  $stmt = $con->prepare( $query );
-  $stmt->execute();
-  $num = $stmt->rowCount();
-  if ($num > 0){
-    echo("<table>");
-    for ($i=0; $i < $num; $i++){
-      $riga = $stmt->fetch(PDO::FETCH_NUM);
-      echo "<tr>";
-      foreach($riga as $key => $value){
-          if ($key > 4){
-            echo "</tr>";
-          }
-          echo "<td>$value</td>";
-          if ($key > 4){
-            echo "</tr>";
-          }
-      }
-      echo "</tr>";
-    }
-    echo "</table>";
-  }
-  else{
-    echo "No data founded";
-  }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -55,8 +27,7 @@ function create_table($con){
           <h2 align = 'center'>Utilizzare credenziali classeviva</h2><br><br>
           <form action='login/login.php' method='post'>
             <table align='center'>
-            <tr><td>Scuola</td><td>Nome utente</td><td>Password</td><td></td></tr>
-            <tr><td><input type='text' name='scuola' ></td>
+            <tr><td>Nome utente</td><td>Password</td><td></td></tr>
             <td><input type='text' name='username' ></td>
             <td><input type='password' name='password' ></td>
             <td><input type='submit' name='invio'></td></tr>
@@ -66,8 +37,8 @@ function create_table($con){
       else {
         echo "<h3>Buongiorno professor *****. </h3>";
         echo "<a href=\"login/logout.php\"><input name='button' value='Logout' style=' color: #191919; background-color: #e60000;' type='submit'></a>";
-        create_table($con);
       }
+      include "create_table.php";
      ?>
   </body>
   <?php

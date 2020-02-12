@@ -1,6 +1,6 @@
 <?php
-if (isset($_POST["scuola"]) && isset($_POST["username"]) && isset($_POST["password"])){
-      $scuola=$_REQUEST["scuola"];
+if (isset($_POST["username"]) && isset($_POST["password"])){
+      $scuola='VRIT0007';
       $password = $_REQUEST["password"];
       $username= $_REQUEST["username"];
       $url = 'https://web.spaggiari.eu/services/ws/wsExtAuth.php?wsdl';
