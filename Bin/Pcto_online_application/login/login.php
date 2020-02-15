@@ -17,9 +17,12 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
       #print($result[2]);
     }
     else{
-      $info=$result[2];			//echo $result;
+      $info = (array) $result[2];			//echo $result;
+      $nome = $info["nome"];
+      $Cognome = $info["cognome"];
       session_start();
-      $_SESSION["user"] = $username;
+      $_SESSION["user"] = $Cognome." ".$nome;
+      var_dump($_SESSION["user"]);
       print($result[0]);
       print($result[1]);
       #print($result[2]);
