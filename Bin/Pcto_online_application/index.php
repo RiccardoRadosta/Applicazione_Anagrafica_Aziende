@@ -135,7 +135,6 @@
                       </form>";
                     include "create_table.php";
                  ?>
-                <p class="lead">Lorem Ipsum dolroin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum<br>auctor nisi elit consequat ipsum, nec sagittis sem!</p>
             </div><!-- end title -->
 
             <div id="default" class="row clearfix zenith_slider">
