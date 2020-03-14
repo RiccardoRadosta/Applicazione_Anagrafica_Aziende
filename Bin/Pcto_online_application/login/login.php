@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (isset($_POST["username"]) && isset($_POST["password"])){
       $scuola='VRIT0007';
       $password = $_REQUEST["password"];
@@ -20,11 +21,11 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
       $info = (array) $result[2];			//echo $result;
       $nome = $info["nome"];
       $Cognome = $info["cognome"];
-      session_start();
+
       $_SESSION["user"] = $Cognome." ".$nome;
-      var_dump($_SESSION["user"]);
-      print($result[0]);
-      print($result[1]);
+      #var_dump($_SESSION["user"]);
+      #print($result[0]);
+      #print($result[1]);
       #print($result[2]);
       header("Location: ../index.php");
       exit();
