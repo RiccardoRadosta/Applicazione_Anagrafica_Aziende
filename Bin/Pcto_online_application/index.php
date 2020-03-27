@@ -133,7 +133,12 @@
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
                         </table>
                       </form>";
-                    include "create_table.php";
+                    if (!isset($_SESSION["user"])){
+                      include "create_table.php";
+                    }
+                    else{
+                      include "create_table_prof.php";
+                    }
                  ?>
             </div><!-- end title -->
 
