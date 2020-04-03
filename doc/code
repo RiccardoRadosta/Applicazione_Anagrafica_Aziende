@@ -1,0 +1,9 @@
+echo"
+  <form action='search.php' method='post'>
+    <table align='center'>
+    <tr><td><h1>Comune</h1></td><td><h1>****</h1></td><td></td></tr>
+    <td><input type='text' name='comun'></td>
+    <td><input type='submit' class='btn btn-light btn-radius btn-brd' value='cerca'><i class='fa fa-play' aria-hidden='true'></i></a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+    </table>
+  </form>";

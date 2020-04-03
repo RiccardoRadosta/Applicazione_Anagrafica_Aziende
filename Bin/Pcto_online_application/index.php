@@ -122,24 +122,8 @@
     <div id="features" class="section wb">
         <div class="container">
             <div class="section-title text-center">
-                <h3>Barra di ricerca</h3>
-                <?php
-                    echo"
-                      <form action='search.php' method='post'>
-                        <table align='center'>
-                        <tr><td><h1>Comune</h1></td><td><h1>****</h1></td><td></td></tr>
-                        <td><input type='text' name='comun'></td>
-                        <td><input type='submit' class='btn btn-light btn-radius btn-brd' value='cerca'><i class='fa fa-play' aria-hidden='true'></i></a>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
-                        </table>
-                      </form>";
-                    if (!isset($_SESSION["user"])){
-                      include "create_table.php";
-                    }
-                    else{
-                      include "create_table_prof.php";
-                    }
-                 ?>
+                <h3>Se vuoi visualizzare la tabella contenente i dati delle varie aziende clicca qui sotto</h3>
+                  <input type="button" onclick="location.href='table/table_page.php'" value="Cliccami"/>
             </div><!-- end title -->
 
             <div id="default" class="row clearfix zenith_slider">
