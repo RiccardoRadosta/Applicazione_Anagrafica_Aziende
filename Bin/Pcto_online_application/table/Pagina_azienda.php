@@ -4,6 +4,7 @@
   $name = $_POST['nome'];
   echo"<title>$name </title>
   <h1 align='center'>$name</h1>";
+   echo"<body style='background-color:#ffcce6'>";
   include "../db_connect.php";
   $array = [];
   if (!isset($_SESSION["user"])){
@@ -20,7 +21,7 @@
   $num = $stmt->rowCount();
 
   if ($num > 0){
-    echo("<table border = '3' align = 'center'>");
+    echo("<table border = '3' align = 'center' bgcolor='white'>");
     for ($i=0; $i < $num; $i++){
       $conta = 0;
       $riga = $stmt->fetch(PDO::FETCH_NUM);

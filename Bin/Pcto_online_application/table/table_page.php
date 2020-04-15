@@ -5,11 +5,12 @@ $stmt = $con->prepare( $query );
 $stmt->execute();
 $num = $stmt->rowCount();
 #if ($conta == 0){
-
+ echo"<body style='background-color:#ffcce6'>
+ <h1 align='center'>Tabella dati</h1>";
 #}
 #elseif ($num > 0 and $conta !=0){
 if ($num > 0){
-  echo("<table border = '2'>");
+  echo("<table border = '2' bgcolor='white' align='center'>");
   echo("</td><td><h4>Tipologia</h4></td><td><h4>Ragione_sociale</h4></td><td><h4>Comune</h4></td><td><h4>Provincia</h4></td></tr>");
 
 
