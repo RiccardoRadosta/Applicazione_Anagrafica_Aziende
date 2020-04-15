@@ -9,7 +9,7 @@ $num = $stmt->rowCount();
  <h1 align='center'>Tabella dati</h1>";
  echo"
    <form action='search.php' method='post'>
-   <input type='textr' name = 'comune' value=''/>
+   <input type='text' name = 'comune' value='comune'/>
    <td><input type='submit' value='cerca' /></td>
    </form>";
 #}
