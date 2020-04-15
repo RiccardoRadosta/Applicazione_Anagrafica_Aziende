@@ -7,6 +7,11 @@ $num = $stmt->rowCount();
 #if ($conta == 0){
  echo"<body style='background-color:#ffcce6'>
  <h1 align='center'>Tabella dati</h1>";
+ echo"
+   <form action='search.php' method='post'>
+   <input type='textr' name = 'comune' value=''/>
+   <td><input type='submit' value='cerca' /></td>
+   </form>";
 #}
 #elseif ($num > 0 and $conta !=0){
 if ($num > 0){
