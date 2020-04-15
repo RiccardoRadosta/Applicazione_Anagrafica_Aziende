@@ -1,6 +1,6 @@
 <?php
 include "../db_connect.php";
-$query = "SELECT Tipo_Azienda, Ragione_sociale, Comune, Provincia from Aziende";
+$query = "SELECT Tipologia, Ragione_sociale, Comune, Provincia from Aziende";
 $stmt = $con->prepare( $query );
 $stmt->execute();
 $num = $stmt->rowCount();
@@ -35,7 +35,7 @@ if ($num > 0){
   echo "</table>";
 }
 else{
-  echo "No data founded";
+  echo "No data founded1";
 }
 //<td><a href='Pagina_azienda.php' >Mostra</a></td>
 ?>

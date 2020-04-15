@@ -7,7 +7,7 @@
   include "../db_connect.php";
   $array = [];
   if (!isset($_SESSION["user"])){
-    $query = "SELECT Id, Tipo_Azienda, Ragione_sociale, Comune, Provincia, Indirizzo, CAP, Sito_Web, N_Dipendenti, Indirizzo_Scolastico, Codice_ATECO, Descrizione_Lavoro
+    $query = "SELECT Id, Tipologia, Ragione_sociale, Comune, Provincia, Indirizzo, CAP, Sito_Web, Dipendenti, Settore, Codice_ATECO, Descrizione
     from Aziende where Ragione_sociale = '$name'";
     $array = ["Id", "Tipo_Azienda", "Ragione_sociale", "Comune", "Provincia", "Indirizzo", "CAP", "Sito_Web", "N_Dipendenti", "Indirizzo_Scolastico", "Codice_ATECO", "Descrizione_Lavoro"];
   }
